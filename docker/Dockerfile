@@ -16,7 +16,8 @@ FROM debian:bullseye-20220328-slim AS base-docker-armv7
 
 # Use TARGETARCH/TARGETVARIANT defined by docker
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
-FROM base-${BASEIMGTYPE}-${TARGETARCH}${TARGETVARIANT} AS base
+#FROM base-${BASEIMGTYPE}-${TARGETARCH}${TARGETVARIANT} AS base
+FROM base-docker-arm64 AS base
 
 RUN \
     apt-get update \
